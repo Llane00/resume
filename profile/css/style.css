@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+html, body, ul, li, dl, dt, dd, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+}
+
+body {
+  font: 14px/1.8 Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+  background: #dedede;
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 65px 45px;
+  background: #fff;
+}
+
+.wrap:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+section h2 {
+  margin-top: 30px;
+  margin-bottom: 8px;
+  padding-bottom: 10px;
+  width: 40%;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+
+}
+
+section:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.name {
+  float: left;
+  width: 50%;
+}
+
+.name h1 {
+  margin-left: 190px;
+  font-size: 2rem;
+}
+
+.name p {
+  margin-left: 190px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.circle {
+  position: relative;
+  float: left;
+  width: 160px;
+  height: 160px;
+  background: #000;
+  border-radius: 50%;
+}
+
+.circle:before {
+  content: "";
+  position: absolute;
+  top: 80px;
+  left: 40px;
+  width: 80px;
+  color: #fff;
+  border: 1px solid #fff;
+  transform: rotateZ(-45deg);
+}
+
+.circle span {
+  position: absolute;
+  font-size: 34px;
+  color: #fff;
+}
+
+.circle span:nth-child(1) {
+  top: 24px;
+  left: 40px;
+}
+
+.circle span:nth-child(2) {
+  bottom: 24px;
+  right: 40px;
+}
+
+.contact {
+  float: left;
+  width: 50%;
+}
+
+.contact dt {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 4px solid #000;
+}
+
+.contact dd strong {
+  margin-right: 10px;
+}
+
+.experience ul li {
+  position: relative;
+  padding-left: 70px;
+  border-left: 2px solid;
+}
+
+.experience ul li:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -5px;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #000;
+  border-radius: 50%;
+}
