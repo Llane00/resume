@@ -5,6 +5,10 @@ html, body, ul, li, dl, dt, dd, h1, h2, h3, p {
   padding: 0;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 ul, li {
   list-style: none;
 }
@@ -36,6 +40,14 @@ section h2 {
   font-weight: bold;
   border-bottom: 1px solid #ccc;
 
+}
+
+section h3 {
+	font-size: 18px;
+}
+
+section h3 span {
+	color: #ccc;
 }
 
 section:after {
@@ -112,13 +124,13 @@ section:after {
   margin-right: 10px;
 }
 
-.experience ul li {
+.experience ul li, .education ul li {
   position: relative;
-  padding-left: 70px;
+  padding-left: 76px;
   border-left: 2px solid;
 }
 
-.experience ul li:before {
+.experience ul li:before, .education ul li:before {
   content: '';
   position: absolute;
   top: 10px;
@@ -129,3 +141,48 @@ section:after {
   background: #000;
   border-radius: 50%;
 }
+
+.detail {
+	padding-bottom: 10px;
+}
+
+.activities, .skills {
+	float: left;
+	width: 50%;
+}
+
+.activities li, .skills li {
+	position: relative;
+}
+
+.activities ul li:before, .skills ul li:before {
+	content: '';
+	position: absolute;
+	left: -5px;
+	top: 6px;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	border: 1px solid;
+	border-radius: 50%;
+}
+
+.activities ul li:after, .skills ul li:after {
+	content: '+';
+	position: absolute;
+	left: 1px;
+	top: 4px;
+}
+
+.activities ul li, .skills ul li {
+	padding-left: 76px;
+}
+
+.skills ul li {
+	float: left;
+	width: 50%;
+	padding-left: 50px;
+	margin-bottom: 30px;
+}
+
+
