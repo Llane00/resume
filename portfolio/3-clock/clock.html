@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			background: black;
+		}
+		
+		.clock {
+			position: relative;
+			width: 200px;
+			height: 200px;
+			border: 4px solid #fff;
+			border-radius: 50%;
+		}
+		
+		.clock>div {
+			position: absolute;
+			top: 50%;
+			left: 100px;
+			height: 1px;
+			background: red;
+			/*   transition: all .5s; */
+		}
+		
+		.clock .second-hand {
+			width: 100px;
+			transform: rotate(-90deg);
+			transform-origin: 0 0;
+		}
+		
+		.clock .minute-hand {
+			margin-top: -1px;
+			width: 86px;
+			height: 3px;
+			transform: rotate(-90deg);
+			transform-origin: 0 1px;
+		}
+		
+		.clock .hour-hand {
+			margin-top: -2px;
+			width: 70px;
+			height: 5px;
+			transform: rotate(-90deg);
+			transform-origin: 0 2px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="clock">
+		<div class="second-hand"></div>
+		<div class="minute-hand"></div>
+		<div class="hour-hand"></div>
+	</div>
+	<script>
+		function getStart() {
+			var id = setInterval(function (index) {
+				if (id > 1000) {
+					clearInterval(index);
+				}
+				var now = new Date();
+				var hours = now.getHours();
+				var minutes = now.getMinutes();
+				var seconds = now.getSeconds();
+
+				console.log(`${hours}:${minutes}:${seconds}`);
+
+				if (hours > 12) {
+					hours -= 12;
+				}
+
+				// 一分钟几秒的比值 * 360度 
+				// 一小时几分钟的比值 * 360度
+				// 一天几小时的比值 * 360度
+				var secondsDeg = seconds / 60 * 360;
+				var minutesDeg = (minutes * 60 + seconds) / 3600 * 360;
+				var hoursDeg = (hours * 3600 + minutes * 60 + seconds) / (12 * 3600) * 360;
+
+				document.querySelector(".second-hand").style.transform = `rotate(${-90 + secondsDeg}deg)`;
+				document.querySelector(".minute-hand").style.transform = `rotate(${-90 + minutesDeg}deg)`;
+				document.querySelector(".hour-hand").style.transform = `rotate(${-90 + hoursDeg}deg)`;
+
+			}, 1000)
+		}
+
+		getStart();
+	</script>
+</body>
+
+</html>
